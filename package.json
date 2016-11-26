@@ -1,7 +1,7 @@
 {
-  "name": "dynamicweb",
+  "name": "website-test",
   "version": "1.0.0",
-  "description": "",
+  "description": ">npm run webpack",
   "main": "index.js",
   "babel": {
     "presets": [
@@ -11,9 +11,12 @@
       "transform-runtime"
     ]
   },
+  "eslint": {
+    "configFile": ".eslintrc"
+  },
   "scripts": {
-    "webpack": "node_modules/.bin/webpack",
-    "webpack-dev": "node_modules/.bin/webpack-dev-server",
+    "webpack": "webpack",
+    "webpack-dev": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Rene Cabrera Jr.",
@@ -26,6 +29,8 @@
     "babel-runtime": "^6.18.0",
     "compass-mixins": "^0.12.10",
     "css-loader": "^0.25.0",
+    "eslint": "^3.10.2",
+    "eslint-loader": "^1.6.1",
     "extract-text-webpack-plugin": "^2.0.0-beta.4",
     "html-webpack-plugin": "^2.24.1",
     "jshint": "^2.9.4",
@@ -34,7 +39,7 @@
     "postcss-loader": "^1.1.1",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
-    "webpack": "^2.1.0-beta.27",
-    "webpack-dev-server": "^2.1.0-beta.11"
+    "webpack": "^2.1.0-beta.21",
+    "webpack-dev-server": "^2.1.0-beta.10"
   }
 }

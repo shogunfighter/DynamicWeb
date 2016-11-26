@@ -17,13 +17,24 @@ module.exports = {
 		filename: '[name].bundle.js'
 	},
 	module: {
+		////test processor
 		//preLoaders: [
 		//	{
 		//		test: /\.js$/, // include .js files
-		//		exclude: /node_modules/, // exclude any and all files in the node_modules folder
+		//		include: path.join(__dirname, 'src'),
 		//		loader: "jshint-loader"
 		//	}
 		//],
+
+
+		preLoaders: [
+			// Javascript
+			{
+				test: /\.js$/,
+				loader: 'eslint-loader',
+				include: path.join(__dirname, 'src')
+			}
+		],
 
 		loaders: [
 			// style processor
@@ -38,7 +49,7 @@ module.exports = {
 				test: /\.scss$/,
 				loader: ExtractTextPlugin.extract({
 					fallbackLoader: "style-loader",
-					loader: "css-loader!sass-loader"
+					loader: "css-loader!sass-loader?"+compassIncludes
 				}),
 
 				//loader: "style!css",
@@ -56,6 +67,33 @@ module.exports = {
 			}
 		]
 	},
+
+	eslint: {
+		failOnWarning: false,
+		failOnError: true
+	},
+
+
+
+	//// more options in the optional jshint object
+	//jshint: {
+	//	// any jshint option http://www.jshint.com/docs/options/
+	//	// i. e.
+	//	camelcase: true,
+    //
+	//	// jshint errors are displayed by default as warnings
+	//	// set emitErrors to true to display them as errors
+	//	emitErrors: false,
+    //
+	//	// jshint to not interrupt the compilation
+	//	// if you want any file with jshint errors to fail
+	//	// set failOnHint to true
+	//	failOnHint: false,
+    //
+	//	//// custom reporter function
+	//	//reporter: function(errors) { }
+	//},
+
 	devServer: {
 		contentBase: path.join(__dirname, 'dist'),
 		inline: true,
@@ -67,7 +105,7 @@ module.exports = {
 	},
 	plugins: [
 
-		new ExtractTextPlugin('./dist/style.css'),
+		new ExtractTextPlugin('style.css'),
 
 		new HtmlWebpackPlugin({
 			template: path.join(__dirname, 'src', 'index.html'),
