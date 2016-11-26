@@ -2,6 +2,7 @@
 ####Make a folder where you want to put your new project
 	
 > mkdir test
+
 > cd test
 
 ####download this repo and save into your newly created folder
@@ -13,6 +14,8 @@
 
 ---
 
+
+##Development and deployment
 ####To build the project for distribution:
 
 > npm run webpack
