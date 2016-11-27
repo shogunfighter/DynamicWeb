@@ -26,15 +26,15 @@ module.exports = {
 		//	}
 		//],
 
-
-		preLoaders: [
-			// Javascript
-			{
-				test: /\.js$/,
-				loader: 'eslint-loader',
-				include: path.join(__dirname, 'src')
-			}
-		],
+        // problems with webpack
+		//preLoaders: [
+		//	// Javascript
+		//	{
+		//		test: /\.js$/,
+		//		loader: 'eslint-loader',
+		//		include: path.join(__dirname, 'src')
+		//	}
+		//],
 
 		loaders: [
 			// style processor
@@ -68,10 +68,11 @@ module.exports = {
 		]
 	},
 
-	eslint: {
-		failOnWarning: false,
-		failOnError: true
-	},
+	// problems with webpack
+	//eslint: {
+	//	failOnWarning: false,
+	//	failOnError: true
+	//},
 
 
 

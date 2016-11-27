@@ -11,9 +11,6 @@
       "transform-runtime"
     ]
   },
-  "eslint": {
-    "configFile": ".eslintrc"
-  },
   "scripts": {
     "webpack": "webpack",
     "webpack-dev": "webpack-dev-server",
