@@ -6,7 +6,7 @@
 > cd test
 
 ####download this repo and save into your newly created folder
-> npm clone https://github.com/shogunfighter/DynamicWebDev
+> git clone https://github.com/shogunfighter/DynamicWebDev
 
 ####install the dependencies
 > npm install
